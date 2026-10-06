@@ -1,0 +1,26 @@
+name: Submit an Idea
+description: Submit a new idea for review
+title: "[Idea]: "
+labels: ["idea"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Your Name
+      placeholder: e.g. Jane Doe
+    validations:
+      required: true
+  - type: input
+    id: email
+    attributes:
+      label: Your Email
+      placeholder: e.g. jane@example.com
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your Idea
+      placeholder: Describe your idea in as much detail as possible
+    validations:
+      required: true
