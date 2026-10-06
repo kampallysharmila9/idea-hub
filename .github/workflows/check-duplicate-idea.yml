@@ -33,8 +33,6 @@ jobs:
           echo "Git version:"
           git --version
           echo ""
-          echo "Node version:"
-          node --version
 
       - name: Process idea submission
         id: process
