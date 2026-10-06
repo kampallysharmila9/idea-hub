@@ -1,26 +1,81 @@
 name: Submit an Idea
-description: Submit a new idea for review
+description: Submit a new idea or improvement
 title: "[Idea]: "
-labels: ["idea"]
+labels:
+  - idea
+
 body:
+
   - type: input
     id: name
     attributes:
       label: Your Name
-      placeholder: e.g. Jane Doe
+      description: Please enter your name.
+      placeholder: Jane Doe
     validations:
       required: true
+
   - type: input
-    id: email
+    id: title
     attributes:
-      label: Your Email
-      placeholder: e.g. jane@example.com
+      label: Idea Title
+      description: Give your idea a short, descriptive title.
+      placeholder: "Export reports as PDF"
     validations:
       required: true
+
   - type: textarea
-    id: idea
+    id: problem
     attributes:
-      label: Your Idea
-      placeholder: Describe your idea in as much detail as possible
+      label: Problem / Pain Point
+      description: What problem are you trying to solve?
+      placeholder: |
+        Currently users have difficulty...
     validations:
       required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: What would you like the product to do?
+      placeholder: |
+        I suggest adding...
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Expected Benefit
+      description: What benefit would this provide?
+      placeholder: |
+        This would help users...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which area does this idea belong to?
+      options:
+        - User Experience
+        - Performance
+        - Security
+        - Reporting
+        - Integrations
+        - Automation
+        - Notifications
+        - Mobile
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Details
+      description: Anything else that would help us understand your idea?
+    validations:
+      required: false
