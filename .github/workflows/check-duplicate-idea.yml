@@ -10,12 +10,17 @@ permissions:
 
 jobs:
   process-idea:
-    # Only run for issues created via the "Submit an Idea" form (labeled "idea")
-    if: contains(github.event.issue.labels.*.name, 'idea')
-    runs-on: self-hosted
+    runs-on: [self-hosted, idea]
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Test runner
+        run: |
+          echo "The self-hosted runner is working!"
+          echo "Issue number: ${{ github.event.issue.number }}"
+          echo "Issue title: ${{ github.event.issue.title }}"
 
       - name: Process idea submission
         id: process
